@@ -1,10 +1,17 @@
-import './App.css';
+ import React from "react"
+ import SignupForm from "./Components/SignupForm"; 
+ import Form from "./Components/Form";
+ import "./App.css";
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-    </div>
-  );
+<>
+  
+   <SignupForm />
+</>
+  )
+
 }
 
 export default App;

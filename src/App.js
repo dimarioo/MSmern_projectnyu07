@@ -3,6 +3,7 @@
  import Form from "./Components/Form";
  import "./App.css";
 
+
 const App = () => {
   return (
 <>
@@ -10,6 +11,7 @@ const App = () => {
    <SignupForm />
 </>
   )
+
 }
 
 export default App;

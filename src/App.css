@@ -5,7 +5,7 @@
 
 .container{
   background: linear-gradient(135deg, #0062ff, red);
-  width: 100%;
+  width: 100;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -47,7 +47,7 @@ input {
   border-top-style: none;
   border-left-style: none;
   border-right-style: none;
-  border-bottom-style: 2px solid black;
+  border-bottom-style: 2px solid rgb(2, 2, 2);
   margin-bottom: 10px;
 
 }
@@ -80,3 +80,7 @@ button:active {
   min-width: 370px;
   color:#0062ff;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

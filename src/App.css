@@ -81,6 +81,8 @@ button:active {
   color:#0062ff;
 }
 
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

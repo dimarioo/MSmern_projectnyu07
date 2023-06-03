@@ -2,11 +2,14 @@
 import React, {useState} from "react";
 import Navbar from './Navbar';
 import Footer from './Footer';
-  
+import { Navigate, useNavigate } from "react-router-dom"
+import axios from "axios";
+
   const SignupForm = () => {
+    const navigate = useNavigate()
     const [values, setValues] = useState ({
-      fullname:"",
-      Age:"",
+      name:"",
+      age:"",
       username:"",
       email:"",
       password:"",
@@ -19,9 +22,13 @@ import Footer from './Footer';
     });
   };
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-  };
+  // const handleFormSubmit = (event) => {
+  //   event.preventDefault();
+  // };
+
+ 
+  
+
 
   return (
     <div className="container">
@@ -76,7 +83,7 @@ import Footer from './Footer';
     </div>
 
     <div>
-      <button className="submit" onClick={handleFormSubmit}> Sign Up</button>
+      <button className="submit" onClick ={() => navigate('WelcomePage')}> Sign Up</button>
     </div>
     
     </form>

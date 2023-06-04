@@ -1,23 +1,53 @@
-const router = require ('express')
-const user = require ('../models/users')
-const db = require('../models')
+//const express = require('express');
+//const app = express();
+//const mongoose = require('mongoose')
+const User = require('../Models/users')
 
-router.get ('/', (req, res) => {
-    db.users.find()
-.then((user) => {
-    res.render('users/index', {user})
-})
-.catch(err => {
-    console.log('ERROR404')
-    })
+const test = (req, res) => {
+  res.json('test is working')
+}
+ 
+const registerUser =  async (req, res) => {
+    try {
+      const {name, age, username, email, password} = req.body;
+      //check if name was entered
+      if(!name){
+        return res.json({
+          error: 'Name is required'
+        })
+      };
+      //check username
+      const uexist = await User.findOne({username});
+      if(uexist){
+        return res.json({
+          error: 'username is taken already'
+        })
+      }
+      //check email 
+      const exist = await User.findOne({email});
+      if(exist){
+        return res.json({
+          error: 'Email is taken already'
+        })
+      };
+      //check is password is good
+      if(!password || password.length < 6){
+        return res.json({
+          error: 'Password should be 6 characters or longer'
+        })
+      };
+      
+      const user = await User.create({
+        name, age, username, email, password
+      })
 
-})
+        return res.json(user)
+    } catch (error) {
+      console.log(error)
+    }
+}
 
-router.post('/', (req,res) => {
-    db.users.create(req.body)
-    .then(() => {
-        res.redirect('/users')
-    })
-})
-
-module.exports = router 
+module.exports ={
+  test,
+  registerUser,
+}

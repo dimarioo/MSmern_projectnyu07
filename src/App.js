@@ -14,6 +14,7 @@ const App = () => {
     
 <div>
    <SignupForm />
+
    </div>
      <div>
     <Footer />

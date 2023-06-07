@@ -81,6 +81,14 @@ button:active {
   color:#0062ff;
 }
 
+
+.Home {
+  text-align: center;
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5) );
+  background-size: cover;
+  height: 150vh
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

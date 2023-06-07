@@ -1,9 +1,17 @@
 import React from 'react'
+import '../App.css'
+import Teamimage from "./Teamimage.jpg"
 
 
 function Home(){
     return(
-        <div>Home</div>
+        <div className='Home'>
+            <img
+                    
+                    src={Teamimage}
+                    alt='teamlogo'
+                  />
+        </div>
     )
 }
 

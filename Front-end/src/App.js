@@ -21,8 +21,8 @@ const App = () => {
     <Toaster position="bottom-left" toastOptions={{duration: 4000}} />
    <Routes>
     <Route path ='/' element={<Home />} />
-    <Route path ='/register' element={<Register />} />
-    <Route path ='/login' element={<Login/>} />
+    <Route path ='/Register' element={<Register />} />
+    <Route path ='/Login' element={<Login/>} />
    </Routes>
    <Footer />
 </>
